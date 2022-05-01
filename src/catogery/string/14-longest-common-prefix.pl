@@ -33,7 +33,6 @@ sub longest_common_prefix {
 
   foreach my $i (0..length(@$arr[0]) - 1) {
     foreach my $str (@$arr) {
-      my $temp = substr(@$arr[0], $i, 1);
       if (substr(@$arr[0], $i, 1) ne substr($str, $i, 1)) {
         return substr($str, 0, $i);
       }
