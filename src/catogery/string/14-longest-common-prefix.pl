@@ -6,8 +6,8 @@ use Data::Dumper qw(Dumper);
 
 ########################################################################################
 # Question 14. Longest Common Prefix
-# Difficulty: Easy
-# https://leetcode.com/problems/longest-common-prefix/
+# 🔥 Difficulty: Easy
+# 👉 https://leetcode.com/problems/longest-common-prefix/
 #
 # Write a function to find the longest common prefix string amongst an array of strings.
 #
