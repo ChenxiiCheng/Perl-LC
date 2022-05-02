@@ -2,7 +2,6 @@ use strict;
 use warnings;
 use feature qw(say);
 use Test::Simple tests => 4;
-use Data::Dumper qw(Dumper);
 
 ###################################################################################
 # Question 20. Valid Parentheses
