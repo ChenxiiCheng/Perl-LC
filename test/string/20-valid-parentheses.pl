@@ -6,29 +6,29 @@ use Test::Simple tests => 3;
 # @return {boolean}
 sub is_valid_parentheses {
 	my $str = shift;
-	my @stack;
-	my %map = (
+	my %brackets = (
 		')' => '(',
 		']' => '[',
-		'}' => '{',
+		'}' => '{'
 	);
-	my @left_brackets = values %map;
-	my @right_brackets = keys %map;
+	my @left_brackets = values %brackets;
+	my @right_brackets = keys %brackets;
+	my @stack;
 
 	foreach my $item (split('', $str)) {
-		if (grep { $_ eq $item } @left_brackets) {
+		if (scalar grep { $_ eq $item } @left_brackets) {
 			push(@stack, $item);
-		} elsif ((grep { $_ eq $item } @right_brackets) && scalar @stack) {
+		} elsif ((scalar grep { $_ eq $item } @right_brackets) && scalar @stack) {
 			my $temp = pop(@stack);
-			if ($temp ne $map{$item}) {
+			if ($brackets{$item} ne $temp) {
 				return 0;
 			}
 		} else {
 			return 0;
 		}
 	}
-	my $result = scalar @stack == 0 ? 1 : 0;
-	return $result;
+	my $res = scalar @stack == 0 ? 1 : 0;
+	return $res;
 }
 
 ok(is_valid_parentheses('()') == 1, 'test 1');

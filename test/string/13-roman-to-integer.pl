@@ -1,7 +1,7 @@
 use strict;
 use warnings;
 use feature qw(say);
-use Test::Simple tests => 3;
+use Test::Simple tests => 4;
 
 # @param {string} s
 # @return {number}
@@ -16,7 +16,7 @@ sub romain_to_integer {
 		C => 100,
 		D => 500,
 		M => 1000
- 	);
+	);
 
 	foreach my $i (0..length($str) - 1) {
 		my $curr = substr($str, $i, 1);
@@ -31,5 +31,6 @@ sub romain_to_integer {
 }
 
 ok(romain_to_integer('III') == 3, 'III');
+ok(romain_to_integer('CD') == 400, 'CD');
 ok(romain_to_integer('LVIII') == 58, 'LVIII');
 ok(romain_to_integer('MCMXCIV') == 1994, 'MCMXCIV');
