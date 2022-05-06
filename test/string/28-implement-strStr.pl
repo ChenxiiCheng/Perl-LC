@@ -5,14 +5,13 @@ use Test::Simple tests => 3;
 sub str_str {
 	my ($haystack, $needle) = @_;
 
-	return '' if length($needle) == 0;
+	return "" if length($needle) == 0;
 
 	my $len_of_haystack = length($haystack);
 	my $len_of_needle = length($needle);
 
-	foreach my $i (0..$len_of_haystack - $len_of_needle) {
-		my $str = substr($haystack, $i, $len_of_needle);
-		if ($str eq $needle) {
+	foreach my $i (0..$len_of_haystack - 1) {
+		if (substr($haystack, $i, $len_of_needle) eq $needle) {
 			return $i;
 		}
 	}

@@ -1,6 +1,6 @@
 use strict;
 use warnings;
-use Test::Simple tests => 3;
+use Test::Simple tests => 6;
 
 sub trim {
 	my $s = shift;
@@ -12,13 +12,13 @@ sub length_of_last_word {
 	my $str = shift;
 	my $trim_str = trim($str);
 	my @arr = split(' ', $trim_str);
-	return length($arr[-1]) || 0;
+	return length($arr[-1]);
 }
 
 sub length_of_last_word2 {
 	my $str = shift;
 	my @arr = split(' ', $str);
-	return length($arr[-1]) || 0;
+	return length($arr[-1]);
 }
 
 ok(length_of_last_word('Hello World') == 5, 'test 1');
